@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bounds
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -40,4 +42,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 3359397549
+    locked: 0
+  - name: Above
+    uniqueID: 1264685115
+    locked: 0
+  - name: PlayerAbove
+    uniqueID: 4271530971
     locked: 0

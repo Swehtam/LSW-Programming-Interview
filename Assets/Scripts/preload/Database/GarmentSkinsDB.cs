@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GarmentSkins : MonoBehaviour
+public class GarmentSkinsDB : MonoBehaviour
 {
     public Skins[] skins;
 

@@ -20,8 +20,6 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D myRB;
 
-    private bool isChangingOutfit = true;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -31,15 +29,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isChangingOutfit)
-            return;
 
-        /*isPlayerMoving = false;
+        isPlayerMoving = false;
 
         //Initialize movement as Zero
         moveInput = new Vector2(0f, 0f);
 
-        moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         moveInput *= moveSpeed;
 
@@ -51,15 +47,16 @@ public class PlayerController : MonoBehaviour
 
         anim.SetFloat("MoveX", moveInput.x);
         anim.SetBool("IsMoving", isPlayerMoving);
-        anim.SetFloat("LastMoveX", lastMoveX);*/
+        anim.SetFloat("LastMoveX", lastMoveX);
     }
 
     private void FixedUpdate()
     {
-        //Move the Player through physics
-        //myRB.velocity = moveInput;
+        //Move the Player using physics
+        myRB.velocity = moveInput;
     }
 
+    //********** CRIAR OUTRO SCRIPT PARA ISSO **********
     public void SetLookSide(float value)
     {
         lastMoveX = value;

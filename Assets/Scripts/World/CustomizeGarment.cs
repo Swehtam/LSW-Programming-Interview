@@ -7,22 +7,22 @@ public class CustomizeGarment : MonoBehaviour
     public PlayerClothesController playerClothes;
     public PlayerController playerController;
 
-    private GarmentSkins garmentSkins;
+    private GarmentSkinsDB garmentSkinsDB;
 
     private void Start()
     {
-        garmentSkins = InstancesManager.singleton.GetGarmentSkinsInstance();
+        garmentSkinsDB = InstancesManager.singleton.GetGarmentSkinsDBInstance();
     }
 
     public void PutShirt()
     {
-        Skins skin = garmentSkins.GetSkinByID(0);
+        Skins skin = garmentSkinsDB.GetSkinByID(0);
         playerClothes.ChangeCloth(skin, skin.garment);
     }
 
     public void PutPants()
     {
-        Skins skin = garmentSkins.GetSkinByID(1);
+        Skins skin = garmentSkinsDB.GetSkinByID(1);
         playerClothes.ChangeCloth(skin, skin.garment);
     }
 

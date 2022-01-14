@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 471511590}
   - component: {fileID: 471511589}
+  - component: {fileID: 471511591}
   m_Layer: 0
   m_Name: LoadScene
   m_TagString: Untagged
@@ -152,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a46086512e2391248a4b381ccb1c4610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instantiatePlayer: {fileID: 471511591}
 --- !u!4 &471511590
 Transform:
   m_ObjectHideFlags: 0
@@ -166,6 +168,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &471511591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471511588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62a4af499c497a84389830133944e8fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &981964589
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +191,8 @@ GameObject:
   - component: {fileID: 981964591}
   - component: {fileID: 981964590}
   - component: {fileID: 981964592}
+  - component: {fileID: 981964593}
+  - component: {fileID: 981964594}
   m_Layer: 0
   m_Name: _database
   m_TagString: Untagged
@@ -249,6 +265,35 @@ MonoBehaviour:
     - {fileID: 7992483959768707263, guid: 0a54c0f63f2723f49afce59891acd406, type: 3}
     - {fileID: 7525875306966922259, guid: 0a54c0f63f2723f49afce59891acd406, type: 3}
     - {fileID: 3541437218033772699, guid: 0a54c0f63f2723f49afce59891acd406, type: 3}
+--- !u!114 &981964593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981964589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c384ae3db2be6d341bd685539007b28d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerShirtID: 0
+  playerPantsID: 1
+  playerOwnedShirtsID: 00000000
+  playerOwnedPantsID: 01000000
+--- !u!114 &981964594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981964589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b754155f98fb45b498c8e565ae2b80c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStartPoint: Vendor_Front
 --- !u!1 &1120941717
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,4 +350,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bafcf96727afe5d469e7bbc763b178d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  garment_Skins: {fileID: 981964592}
+  instantiatePlayer: {fileID: 471511591}
+  playerClothesController: {fileID: 0}
+  garmentSkins: {fileID: 981964592}
+  playerGarmentDB: {fileID: 981964593}
+  playerStatsDB: {fileID: 981964594}

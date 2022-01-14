@@ -26,6 +26,7 @@ public class PlayerClothesController : MonoBehaviour
     {
         int spriteNr;
 
+        //TRANSFORMAR EM UM METHOD
         if (playerController.IsWalking())
         {
             string spriteName = characterSR.sprite.name;

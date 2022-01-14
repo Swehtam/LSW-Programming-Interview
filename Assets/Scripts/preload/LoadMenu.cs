@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class LoadMenu : MonoBehaviour
 {
+    public InstantiatePlayer instantiatePlayer;
     //private LevelLoader levelLoader;
     void Start()
     {
         //Mudar para carregar a tela de menu, quando tiver uma
         //levelLoader = InstancesManager.singleton.GetLevelLoaderInstance();
-        SceneManager.LoadScene("SampleScene");
+        instantiatePlayer.CreatePlayerAtWorld();
+        SceneManager.LoadScene("Village");
     }
 }

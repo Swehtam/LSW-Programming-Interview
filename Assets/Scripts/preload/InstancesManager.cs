@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-/* Classe criada baseado no padrão de projeto Singleton.
- * Seu intuito é guardar e fornecer instâncias de classes únicas presentes em cada scene do jogo.
- * Diminuindo o número de chamadas do método FindObjectOfType.
- * Caso a instância não exista no singleton, o mesmo irá buscar essa instância e salvar em seu objeto estático.
+/*
+ * Class created based on singleton project pattern.
+ * It's intentioned to keep and supply unique class instances that is presente on each scene of the game.
+ * Decreasing the number of call of the method "FindObjectOfType".
+ * So, if a instance doesn't exist on the singleton, it will search for the unique instance, salve it, and supply to the caller.
  */
 public class InstancesManager : MonoBehaviour
 {
     public static InstancesManager singleton;
-    [SerializeField] private GarmentSkins garment_Skins;
-    //private GameObject player;
+    [SerializeField] private InstantiatePlayer instantiatePlayer;
+    [SerializeField] private PlayerClothesController playerClothesController;
+    [SerializeField] private GarmentSkinsDB garmentSkins;
+    [SerializeField] private PlayerGarmentDB playerGarmentDB;
+    [SerializeField] private PlayerStatsDB playerStatsDB;
+    private GameObject player;
 
     void Awake()
     {
@@ -24,29 +29,69 @@ public class InstancesManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    //Método responsável por retornar o GameObject do jogador para quem solicitar
-    //Caso o GameObject não exista no singleton, procure pelo mesmo, salve e retorne (isso ocorre uma vez por game)
-    /*public PlayerController GetPlayerInstance()
+    //Method reponsible for returning the GameObject of the player when it's requested
+    //If the GameObject doesn't exist on the single, it will search for it, save and then return to the caller (this happens once per game)
+    public GameObject GetPlayerInstance()
     {
         if (player == null)
         {
             var aux = FindObjectOfType<PlayerController>();
 
-            //Se não achar é pq essa é a primeira scene a ser carregada no game, então o GameController irá criar o prefab na scene
+            //If aux is null it's beacause it's the first scene to be loaded in the game, so another script will create the player
             if (aux != null)
                 player = aux.gameObject;
         }
 
         return player;
-    }*/
+    }
 
-    //Método responsável por retornar o DialogueRunner do _preload para quem solicitar
-    //Caso o DialogueRunner não exista no singleton, procure pelo mesmo, salve e retorne (isso ocorre uma vez por cena)
-    public GarmentSkins GetGarmentSkinsInstance()
+    //Method reponsible for returning the GarmentSkins, from _preload scene, when it's requested
+    //If the GarmentSkins doesn't exist on the single, it will search for it, save and then return to the caller (this happens once per game)
+    public GarmentSkinsDB GetGarmentSkinsDBInstance()
     {
-        if (garment_Skins == null)
-            garment_Skins = FindObjectOfType<GarmentSkins>();
+        if (garmentSkins == null)
+            garmentSkins = FindObjectOfType<GarmentSkinsDB>();
 
-        return garment_Skins;
+        return garmentSkins;
+    }
+
+    //Method reponsible for returning the InstantiatePlayer, from _preload scene, when it's requested
+    //If the InstantiatePlayer doesn't exist on the single, it will search for it, save and then return to the caller (this happens once per game)
+    public InstantiatePlayer GetInstantiatePlayerInstance()
+    {
+        if (instantiatePlayer == null)
+            instantiatePlayer = FindObjectOfType<InstantiatePlayer>();
+
+        return instantiatePlayer;
+    }
+
+    //Method reponsible for returning the PlayerGarmentDB, from _preload scene, when it's requested
+    //If the PlayerGarmentDB doesn't exist on the single, it will search for it, save and then return to the caller (this happens once per game)
+    public PlayerGarmentDB GetPlayerGarmentDBInstance()
+    {
+        if (playerGarmentDB == null)
+            playerGarmentDB = FindObjectOfType<PlayerGarmentDB>();
+
+        return playerGarmentDB;
+    }
+
+    //Method reponsible for returning the PlayerClothesController, from player scene, when it's requested
+    //If the PlayerClothesController doesn't exist on the single, it will search for it, save and then return to the caller (this happens once per game)
+    public PlayerClothesController GetPlayerClothesControllerInstance()
+    {
+        if (playerClothesController == null)
+            playerClothesController = FindObjectOfType<PlayerClothesController>();
+
+        return playerClothesController;
+    }
+
+    //Method reponsible for returning the PlayerStatsDB, from player scene, when it's requested
+    //If the PlayerStatsDB doesn't exist on the single, it will search for it, save and then return to the caller (this happens once per game)
+    public PlayerStatsDB GetPlayerStatsDBInstance()
+    {
+        if (playerStatsDB == null)
+            playerStatsDB = FindObjectOfType<PlayerStatsDB>();
+
+        return playerStatsDB;
     }
 }
