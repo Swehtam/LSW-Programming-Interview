@@ -166,7 +166,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &471511591
 MonoBehaviour:
@@ -240,8 +240,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skins:
   - skinID: 0
+    icon: {fileID: 21300000, guid: 21091989220967b42bfc87104d6485e4, type: 3}
     garmentName: Green T-Shirt
     garment: 0
+    value: 50
     idle_sprites:
     - {fileID: -4250381722983421301, guid: a1d74b9b173fd56478c643ace4f7282a, type: 3}
     - {fileID: 3564074729913874761, guid: a1d74b9b173fd56478c643ace4f7282a, type: 3}
@@ -253,8 +255,10 @@ MonoBehaviour:
     - {fileID: -4527252934540865339, guid: 8895e46f5e2b8094787a0835d71d3d2c, type: 3}
     - {fileID: 7894681462215124692, guid: 8895e46f5e2b8094787a0835d71d3d2c, type: 3}
   - skinID: 1
+    icon: {fileID: 21300000, guid: d77d383bf70b1ac40ac601c56f59a2de, type: 3}
     garmentName: Brown Pants
     garment: 1
+    value: 49
     idle_sprites:
     - {fileID: 3926457431556890480, guid: 274d168bae65bb84c9f94b3ca79e7401, type: 3}
     - {fileID: -7194813247808062742, guid: 274d168bae65bb84c9f94b3ca79e7401, type: 3}
@@ -294,6 +298,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStartPoint: Vendor_Front
+--- !u!1 &1000872847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1000872850}
+  - component: {fileID: 1000872849}
+  - component: {fileID: 1000872848}
+  m_Layer: 0
+  m_Name: _events
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1000872848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000872847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6343f7b52fcf0ad429ecae39f5aef025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1000872849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000872847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f5c0ba5937b5d348bed54479bf1c1f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1000872850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000872847}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 578.7175, y: 555.10114, z: -889.3589}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1120941717
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,6 +412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instantiatePlayer: {fileID: 471511591}
   playerClothesController: {fileID: 0}
+  storeEvents: {fileID: 1000872848}
   garmentSkins: {fileID: 981964592}
   playerGarmentDB: {fileID: 981964593}
   playerStatsDB: {fileID: 981964594}

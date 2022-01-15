@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5555375911792371190}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5555375911420877406
 SpriteRenderer:
@@ -112,7 +112,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5555375911792371190}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5555375911787589851
 SpriteRenderer:
@@ -200,8 +200,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5555375911787589850}
   - {fileID: 5555375911420877405}
+  - {fileID: 5555375911787589850}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -366,8 +366,10 @@ MonoBehaviour:
   shirtSR: {fileID: 5555375911787589851}
   shirtSkin:
     skinID: -1
+    icon: {fileID: 0}
     garmentName: Empty
     garment: 0
+    value: 0
     idle_sprites:
     - {fileID: 1120208674066278986, guid: ac954c4004c74b24591bbcd54496fa28, type: 3}
     - {fileID: -8336583551794626455, guid: ac954c4004c74b24591bbcd54496fa28, type: 3}
@@ -380,8 +382,10 @@ MonoBehaviour:
     - {fileID: -8797508897052479856, guid: ac954c4004c74b24591bbcd54496fa28, type: 3}
   pantsSkin:
     skinID: -1
+    icon: {fileID: 0}
     garmentName: Empty
     garment: 1
+    value: 0
     idle_sprites:
     - {fileID: 1120208674066278986, guid: ac954c4004c74b24591bbcd54496fa28, type: 3}
     - {fileID: -8336583551794626455, guid: ac954c4004c74b24591bbcd54496fa28, type: 3}

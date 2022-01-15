@@ -14,6 +14,7 @@ public class InstancesManager : MonoBehaviour
     public static InstancesManager singleton;
     [SerializeField] private InstantiatePlayer instantiatePlayer;
     [SerializeField] private PlayerClothesController playerClothesController;
+    [SerializeField] private StoreEvents storeEvents;
     [SerializeField] private GarmentSkinsDB garmentSkins;
     [SerializeField] private PlayerGarmentDB playerGarmentDB;
     [SerializeField] private PlayerStatsDB playerStatsDB;
@@ -75,7 +76,7 @@ public class InstancesManager : MonoBehaviour
         return playerGarmentDB;
     }
 
-    //Method reponsible for returning the PlayerClothesController, from player scene, when it's requested
+    //Method reponsible for returning the PlayerClothesController, from player, when it's requested
     //If the PlayerClothesController doesn't exist on the single, it will search for it, save and then return to the caller (this happens once per game)
     public PlayerClothesController GetPlayerClothesControllerInstance()
     {
@@ -85,7 +86,7 @@ public class InstancesManager : MonoBehaviour
         return playerClothesController;
     }
 
-    //Method reponsible for returning the PlayerStatsDB, from player scene, when it's requested
+    //Method reponsible for returning the PlayerStatsDB, from _preload scene, when it's requested
     //If the PlayerStatsDB doesn't exist on the single, it will search for it, save and then return to the caller (this happens once per game)
     public PlayerStatsDB GetPlayerStatsDBInstance()
     {
@@ -93,5 +94,15 @@ public class InstancesManager : MonoBehaviour
             playerStatsDB = FindObjectOfType<PlayerStatsDB>();
 
         return playerStatsDB;
+    }
+
+    //Method reponsible for returning the StoreEvents, from _preload scene, when it's requested
+    //If the StoreEvents doesn't exist on the single, it will search for it, save and then return to the caller (this happens once per game)
+    public StoreEvents GetStoreEventsInstance()
+    {
+        if (storeEvents == null)
+            storeEvents = FindObjectOfType<StoreEvents>();
+
+        return storeEvents;
     }
 }

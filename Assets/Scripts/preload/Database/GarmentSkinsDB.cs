@@ -26,8 +26,10 @@ public class GarmentSkinsDB : MonoBehaviour
 public struct Skins
 {
     public int skinID;
+    public Sprite icon;
     public string garmentName;
     public Garment garment;
+    public int value;
     public Sprite[] idle_sprites;
     public Sprite[] walk_sprites;
 }
