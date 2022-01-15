@@ -17,13 +17,13 @@ public class CustomizeGarment : MonoBehaviour
     public void PutShirt()
     {
         Skins skin = garmentSkinsDB.GetSkinByID(0);
-        playerClothes.ChangeCloth(skin, skin.garment);
+        playerClothes.ChangeGarment(skin);
     }
 
     public void PutPants()
     {
         Skins skin = garmentSkinsDB.GetSkinByID(1);
-        playerClothes.ChangeCloth(skin, skin.garment);
+        playerClothes.ChangeGarment(skin);
     }
 
     public void SetWalking(bool value)

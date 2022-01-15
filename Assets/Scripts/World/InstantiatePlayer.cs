@@ -31,10 +31,10 @@ public class InstantiatePlayer : MonoBehaviour
         GarmentSkinsDB garmentSkinsDB = InstancesManager.singleton.GetGarmentSkinsDBInstance();
 
         //Set Shirt that the player is using
-        playerClothes.ChangeCloth(garmentSkinsDB.GetSkinByID(playerGarmentDB.GetShirtID()), Garment.Shirt);
+        playerClothes.ChangeGarment(garmentSkinsDB.GetSkinByID(playerGarmentDB.GetShirtID()));
 
         //Set Shirt that the player is using
-        playerClothes.ChangeCloth(garmentSkinsDB.GetSkinByID(playerGarmentDB.GetPantsID()), Garment.Pants);
+        playerClothes.ChangeGarment(garmentSkinsDB.GetSkinByID(playerGarmentDB.GetPantsID()));
     }
 
     private void UpdatePlayerStats()

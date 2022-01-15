@@ -269,6 +269,126 @@ MonoBehaviour:
     - {fileID: 7992483959768707263, guid: 0a54c0f63f2723f49afce59891acd406, type: 3}
     - {fileID: 7525875306966922259, guid: 0a54c0f63f2723f49afce59891acd406, type: 3}
     - {fileID: 3541437218033772699, guid: 0a54c0f63f2723f49afce59891acd406, type: 3}
+  - skinID: 2
+    icon: {fileID: 21300000, guid: ae3bc034b69a78748a8cb0e76bf5310e, type: 3}
+    garmentName: Black Pants
+    garment: 1
+    value: 48
+    idle_sprites:
+    - {fileID: -2650777005747963645, guid: df6e88f51bc524841bc687d9cab83cf3, type: 3}
+    - {fileID: 5843946151254821196, guid: df6e88f51bc524841bc687d9cab83cf3, type: 3}
+    - {fileID: 8357063363147911178, guid: df6e88f51bc524841bc687d9cab83cf3, type: 3}
+    - {fileID: -8222294503303294771, guid: df6e88f51bc524841bc687d9cab83cf3, type: 3}
+    walk_sprites:
+    - {fileID: -4574816007881622288, guid: 196c7ca0effcd974ebc7623f7225b9c3, type: 3}
+    - {fileID: 3952948994830260325, guid: 196c7ca0effcd974ebc7623f7225b9c3, type: 3}
+    - {fileID: 7893042360301556531, guid: 196c7ca0effcd974ebc7623f7225b9c3, type: 3}
+    - {fileID: -7792502967238506820, guid: 196c7ca0effcd974ebc7623f7225b9c3, type: 3}
+  - skinID: 3
+    icon: {fileID: 21300000, guid: 98bfd50c55d80fd49b028ed5b3d44e3f, type: 3}
+    garmentName: Blue Pants
+    garment: 1
+    value: 47
+    idle_sprites:
+    - {fileID: 4802704288811178280, guid: 8c96891b51a43504eb063e86327e21b3, type: 3}
+    - {fileID: 1402502337091863860, guid: 8c96891b51a43504eb063e86327e21b3, type: 3}
+    - {fileID: -1440989266958847744, guid: 8c96891b51a43504eb063e86327e21b3, type: 3}
+    - {fileID: -425768864330461437, guid: 8c96891b51a43504eb063e86327e21b3, type: 3}
+    walk_sprites:
+    - {fileID: -294141035608743066, guid: a629da4f16b4a3043a270e4824fe7202, type: 3}
+    - {fileID: -6846568219733642925, guid: a629da4f16b4a3043a270e4824fe7202, type: 3}
+    - {fileID: 4495643981230924955, guid: a629da4f16b4a3043a270e4824fe7202, type: 3}
+    - {fileID: -6538938859357836842, guid: a629da4f16b4a3043a270e4824fe7202, type: 3}
+  - skinID: 4
+    icon: {fileID: 21300000, guid: f1c240b457a3e8f4f9d9af6d15ada3d2, type: 3}
+    garmentName: Mustard Pants
+    garment: 1
+    value: 46
+    idle_sprites:
+    - {fileID: 8201369114138980334, guid: e05f07883df99264c9ddfc6dd183cf9c, type: 3}
+    - {fileID: -2150843476742747702, guid: e05f07883df99264c9ddfc6dd183cf9c, type: 3}
+    - {fileID: -8133880289938509120, guid: e05f07883df99264c9ddfc6dd183cf9c, type: 3}
+    - {fileID: 80842397333260966, guid: e05f07883df99264c9ddfc6dd183cf9c, type: 3}
+    walk_sprites:
+    - {fileID: -8645675096982141349, guid: ecdf87423e830564095bced6c3ff7f45, type: 3}
+    - {fileID: 2094104294040449338, guid: ecdf87423e830564095bced6c3ff7f45, type: 3}
+    - {fileID: 6439723947871670140, guid: ecdf87423e830564095bced6c3ff7f45, type: 3}
+    - {fileID: 7528385710712662612, guid: ecdf87423e830564095bced6c3ff7f45, type: 3}
+  - skinID: 5
+    icon: {fileID: 21300000, guid: 3e6a17550a8aec84d8a6e33448bb6496, type: 3}
+    garmentName: Purple Pants
+    garment: 1
+    value: 45
+    idle_sprites:
+    - {fileID: 9156397396280600753, guid: 7d9af2943da71a546bfa83d27ca99442, type: 3}
+    - {fileID: 7251415180154140333, guid: 7d9af2943da71a546bfa83d27ca99442, type: 3}
+    - {fileID: 4388986091584321261, guid: 7d9af2943da71a546bfa83d27ca99442, type: 3}
+    - {fileID: 6700425334105373939, guid: 7d9af2943da71a546bfa83d27ca99442, type: 3}
+    walk_sprites:
+    - {fileID: -6325896947962439033, guid: fc00a259aec5fb74abb2bb13a364c191, type: 3}
+    - {fileID: -4162477775660742749, guid: fc00a259aec5fb74abb2bb13a364c191, type: 3}
+    - {fileID: 1291159033094248250, guid: fc00a259aec5fb74abb2bb13a364c191, type: 3}
+    - {fileID: -7684007171870278718, guid: fc00a259aec5fb74abb2bb13a364c191, type: 3}
+  - skinID: 6
+    icon: {fileID: 21300000, guid: 48b7bf8bd8508dc42bcd9e05e4c5da95, type: 3}
+    garmentName: Black Shirt
+    garment: 0
+    value: 51
+    idle_sprites:
+    - {fileID: -2736958479135533028, guid: 0e69eb4c415cf264faf9042aeb66f268, type: 3}
+    - {fileID: 4363664039539053399, guid: 0e69eb4c415cf264faf9042aeb66f268, type: 3}
+    - {fileID: 1523395438487856369, guid: 0e69eb4c415cf264faf9042aeb66f268, type: 3}
+    - {fileID: 4820178552423627215, guid: 0e69eb4c415cf264faf9042aeb66f268, type: 3}
+    walk_sprites:
+    - {fileID: 7873304227339363631, guid: 20e00d84a859a83469277a5126c292b2, type: 3}
+    - {fileID: -9142016701184389366, guid: 20e00d84a859a83469277a5126c292b2, type: 3}
+    - {fileID: -9061677434319554417, guid: 20e00d84a859a83469277a5126c292b2, type: 3}
+    - {fileID: -761356483568277765, guid: 20e00d84a859a83469277a5126c292b2, type: 3}
+  - skinID: 7
+    icon: {fileID: 21300000, guid: bc998be4ac5a07047b02468321f513df, type: 3}
+    garmentName: Pink Shirt
+    garment: 0
+    value: 52
+    idle_sprites:
+    - {fileID: -5951473718267020405, guid: 02a58c1266108f347952aee3c64cb59f, type: 3}
+    - {fileID: -3158069669288279323, guid: 02a58c1266108f347952aee3c64cb59f, type: 3}
+    - {fileID: -8344966535022262752, guid: 02a58c1266108f347952aee3c64cb59f, type: 3}
+    - {fileID: -8619068420965672304, guid: 02a58c1266108f347952aee3c64cb59f, type: 3}
+    walk_sprites:
+    - {fileID: -6354988494683654956, guid: e5883800d158c95409f39072d36c170b, type: 3}
+    - {fileID: 1063088513657857606, guid: e5883800d158c95409f39072d36c170b, type: 3}
+    - {fileID: 4357592423425957749, guid: e5883800d158c95409f39072d36c170b, type: 3}
+    - {fileID: -5427171982939386203, guid: e5883800d158c95409f39072d36c170b, type: 3}
+  - skinID: 8
+    icon: {fileID: 21300000, guid: 569e92bf4d5d3e448808d9cd13bd315f, type: 3}
+    garmentName: Purple Shirt
+    garment: 0
+    value: 53
+    idle_sprites:
+    - {fileID: 4281408458401713169, guid: b99e15c9112464348a5498799824ec8c, type: 3}
+    - {fileID: -2392448849092555579, guid: b99e15c9112464348a5498799824ec8c, type: 3}
+    - {fileID: -1373155379754061252, guid: b99e15c9112464348a5498799824ec8c, type: 3}
+    - {fileID: -2708159310165816977, guid: b99e15c9112464348a5498799824ec8c, type: 3}
+    walk_sprites:
+    - {fileID: -7385232915365244757, guid: dd6cc8c665aed4d46b2d88a749ba538a, type: 3}
+    - {fileID: 8319549573504183580, guid: dd6cc8c665aed4d46b2d88a749ba538a, type: 3}
+    - {fileID: 4416328482676509950, guid: dd6cc8c665aed4d46b2d88a749ba538a, type: 3}
+    - {fileID: 9025819117704259598, guid: dd6cc8c665aed4d46b2d88a749ba538a, type: 3}
+  - skinID: 9
+    icon: {fileID: 21300000, guid: e581beacbaab3ed45a397497558028cb, type: 3}
+    garmentName: Red Shirt
+    garment: 0
+    value: 54
+    idle_sprites:
+    - {fileID: -7633848824008656052, guid: f7eb7b036cbcf1344956d0fa66aa3cb1, type: 3}
+    - {fileID: 4016621982100786925, guid: f7eb7b036cbcf1344956d0fa66aa3cb1, type: 3}
+    - {fileID: -3606726921195008873, guid: f7eb7b036cbcf1344956d0fa66aa3cb1, type: 3}
+    - {fileID: -6336671316338349647, guid: f7eb7b036cbcf1344956d0fa66aa3cb1, type: 3}
+    walk_sprites:
+    - {fileID: 2961061836529394032, guid: 5f3c20d0b1284a3418b9073a7f2e1ce2, type: 3}
+    - {fileID: 4892953067020139980, guid: 5f3c20d0b1284a3418b9073a7f2e1ce2, type: 3}
+    - {fileID: -3504606902409523120, guid: 5f3c20d0b1284a3418b9073a7f2e1ce2, type: 3}
+    - {fileID: -4448535167429018076, guid: 5f3c20d0b1284a3418b9073a7f2e1ce2, type: 3}
 --- !u!114 &981964593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,6 +418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStartPoint: Vendor_Front
+  totalCoins: 200
 --- !u!1 &1000872847
 GameObject:
   m_ObjectHideFlags: 0

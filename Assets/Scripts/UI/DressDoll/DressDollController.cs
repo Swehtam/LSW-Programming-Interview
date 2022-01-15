@@ -17,20 +17,28 @@ public class DressDollController : MonoBehaviour
 
     private StoreEvents storeEvents;
     private GarmentSkinsDB garmentSkinsDB;
+    private PlayerGarmentDB playerGarmentDB;
 
     private void Start()
     {
         characterSR = GetComponent<Image>();
-        anim = GetComponent<Animator>();
 
         storeEvents = InstancesManager.singleton.GetStoreEventsInstance();
         storeEvents.OnGarmentSelected += ChangeGarment;
-
-        garmentSkinsDB = InstancesManager.singleton.GetGarmentSkinsDBInstance();
     }
 
     private void OnEnable()
     {
+        if(playerGarmentDB == null)
+            playerGarmentDB = InstancesManager.singleton.GetPlayerGarmentDBInstance();
+
+        if(garmentSkinsDB == null)
+            garmentSkinsDB = InstancesManager.singleton.GetGarmentSkinsDBInstance();
+
+        //Display Dress Doll with the current outfit the player is using
+        ChangeGarment(playerGarmentDB.GetPantsID());
+        ChangeGarment(playerGarmentDB.GetShirtID());
+
         isWalking = false;
 
         if(anim == null)

@@ -10,16 +10,22 @@ public class PlayerClothesController : MonoBehaviour
     public Skins shirtSkin;
     public Skins pantsSkin;
 
-    private int pantsID = -1;
-    private int shirtID = -1;
     private SpriteRenderer characterSR;
     private PlayerController playerController;
+
+    private StoreEvents storeEvents;
+    private PlayerGarmentDB playerGarmentDB;
 
     // Start is called before the first frame update
     void Start()
     {
         characterSR = GetComponent<SpriteRenderer>();
         playerController = GetComponent<PlayerController>();
+
+        storeEvents = InstancesManager.singleton.GetStoreEventsInstance();
+        storeEvents.OnGarmentBought += ChangeGarment;
+
+        playerGarmentDB = InstancesManager.singleton.GetPlayerGarmentDBInstance();
     }
 
     private void LateUpdate()
@@ -68,18 +74,16 @@ public class PlayerClothesController : MonoBehaviour
         }
     }
 
-    public void ChangeCloth(Skins skin, Garment garment)
+    public void ChangeGarment(Skins skin)
     {
-        switch (garment)
+        switch (skin.garment)
         {
             case Garment.Shirt:
                 shirtSkin = skin;
-                shirtID = skin.skinID;
                 break;
 
             case Garment.Pants:
                 pantsSkin = skin;
-                pantsID = skin.skinID;
                 break;
         }
     }
