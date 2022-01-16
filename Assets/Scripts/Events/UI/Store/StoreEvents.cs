@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class StoreEvents : MonoBehaviour
 {
-    public delegate void GarmentSelectedEventHandler(int skinID);
-    public event GarmentSelectedEventHandler OnGarmentSelected;
-    public delegate void GarmentBoughtEventHandler(Skins skin);
-    public event GarmentBoughtEventHandler OnGarmentBought;
+    public delegate void DollGarmentSelectedEventHandler(int skinID);
+    public event DollGarmentSelectedEventHandler OnDollGarmentSelected;
+    public delegate void GarmentEquipedEventHandler(Skins skin);
+    public event GarmentEquipedEventHandler OnGarmentEquiped;
 
-    public void GarmentSelected(int skinID)
+    public void DollGarmentSelected(int skinID)
     {
-        OnGarmentSelected?.Invoke(skinID);
+        OnDollGarmentSelected?.Invoke(skinID);
     }
 
-    public void GarmentBought(Skins skin)
+    public void GarmentEquiped(Skins skin)
     {
-        OnGarmentBought?.Invoke(skin);
+        OnGarmentEquiped?.Invoke(skin);
     }
 }

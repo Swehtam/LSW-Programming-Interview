@@ -34,4 +34,9 @@ public class PlayerStatsDB : MonoBehaviour
 
         return false;
     }
+
+    public void GainCoins(int value)
+    {
+        totalCoins += value;
+    }
 }

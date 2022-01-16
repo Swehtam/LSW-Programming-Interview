@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStartPoint: Vendor_Front
-  totalCoins: 200
+  totalCoins: 1000
 --- !u!1 &1000872847
 GameObject:
   m_ObjectHideFlags: 0

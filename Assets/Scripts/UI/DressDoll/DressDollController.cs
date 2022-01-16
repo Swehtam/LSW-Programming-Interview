@@ -14,43 +14,40 @@ public class DressDollController : MonoBehaviour
     private Image characterSR;
     private Animator anim;
     private bool isWalking = false;
+    private float directionX = 1f;
 
     private StoreEvents storeEvents;
     private GarmentSkinsDB garmentSkinsDB;
     private PlayerGarmentDB playerGarmentDB;
 
-    private void Start()
+    private void Awake()
     {
-        characterSR = GetComponent<Image>();
-
+        playerGarmentDB = InstancesManager.singleton.GetPlayerGarmentDBInstance();
+        garmentSkinsDB = InstancesManager.singleton.GetGarmentSkinsDBInstance();
         storeEvents = InstancesManager.singleton.GetStoreEventsInstance();
-        storeEvents.OnGarmentSelected += ChangeGarment;
+
+        storeEvents.OnDollGarmentSelected += ChangeGarment;
     }
 
     private void OnEnable()
     {
-        if(playerGarmentDB == null)
-            playerGarmentDB = InstancesManager.singleton.GetPlayerGarmentDBInstance();
-
-        if(garmentSkinsDB == null)
-            garmentSkinsDB = InstancesManager.singleton.GetGarmentSkinsDBInstance();
-
         //Display Dress Doll with the current outfit the player is using
         ChangeGarment(playerGarmentDB.GetPantsID());
         ChangeGarment(playerGarmentDB.GetShirtID());
 
         isWalking = false;
+        directionX = 1f;
+    }
 
-        if(anim == null)
-            anim = GetComponent<Animator>();
-
-        anim.SetBool("IsWalking", isWalking);
-        anim.SetFloat("LookDirection", 1f);
+    private void Start()
+    {
+        characterSR = GetComponent<Image>();
+        anim = GetComponent<Animator>();
     }
 
     private void OnDestroy()
     {
-        storeEvents.OnGarmentSelected -= ChangeGarment;
+        storeEvents.OnDollGarmentSelected -= ChangeGarment;
     }
 
     private void LateUpdate()
@@ -61,6 +58,8 @@ public class DressDollController : MonoBehaviour
 
         UpdateShirt(spriteNr);
         UpdatePants(spriteNr);
+
+        anim.SetFloat("LookDirection", directionX);
     }
 
     private void UpdateShirt(int spriteNr)
@@ -91,7 +90,8 @@ public class DressDollController : MonoBehaviour
 
     public void LookDirection(float value)
     {
-        anim.SetFloat("LookDirection", value);
+        directionX = value;
+        anim.SetFloat("LookDirection", directionX);
     }
 
     public void SetWalkingValue(bool value)
