@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class UIManager : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class UIManager : MonoBehaviour
     public GameObject wardrobeUI;
 
     public  ShopManager shopManager;
+
+    private bool isPlayerShopping;
+    private bool isPlayerDressing;
 
     private PlayerEvents playerEvents;
 
@@ -28,31 +32,54 @@ public class UIManager : MonoBehaviour
         playerEvents.OnPlayerOpenedWardrobe -= OpenWardrobeUI;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPlayerShopping)
+                CloseShopUI();
+
+            if (isPlayerDressing)
+                CloseWardrobeUI();
+        }
+
+    }
+
     public void OpenShopUI(List<int> itensToBuy)
     {
-        shopUI.gameObject.SetActive(true);
+        isPlayerShopping = true;
+
+        shopUI.SetActive(true);
+        coinsUI.SetActive(false);
+
         shopManager.InstantiateBuyShop(itensToBuy);
-        coinsUI.gameObject.SetActive(false);
     }
 
     public void CloseShopUI()
     {
-        shopUI.gameObject.SetActive(false);
-        coinsUI.gameObject.SetActive(true);
+        isPlayerShopping = false;
+
+        shopUI.SetActive(false);
+        coinsUI.SetActive(true);
 
         playerEvents.PlayerSetInteraction(false);
+        playerEvents.PlayerClosedShop();
     }
 
     public void OpenWardrobeUI()
     {
-        wardrobeUI.gameObject.SetActive(true);
-        coinsUI.gameObject.SetActive(false);
+        isPlayerDressing = true;
+
+        wardrobeUI.SetActive(true);
+        coinsUI.SetActive(false);
     }
 
     public void CloseWardrobeUI()
     {
-        wardrobeUI.gameObject.SetActive(false);
-        coinsUI.gameObject.SetActive(true);
+        isPlayerDressing = false;
+
+        wardrobeUI.SetActive(false);
+        coinsUI.SetActive(true);
 
         playerEvents.PlayerSetInteraction(false);
     }

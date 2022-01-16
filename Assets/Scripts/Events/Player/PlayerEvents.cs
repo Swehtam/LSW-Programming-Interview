@@ -10,6 +10,9 @@ public class PlayerEvents : MonoBehaviour
     public delegate void PlayerOpenedShopEventHandler(List<int> itensToBuy);
     public event PlayerOpenedShopEventHandler OnPlayerOpenedShop;
 
+    public delegate void PlayerClosedShopEventHandler();
+    public event PlayerClosedShopEventHandler OnPlayerClosedShop;
+
     public delegate void PlayerOpenedWardrobeEventHandler();
     public event PlayerOpenedWardrobeEventHandler OnPlayerOpenedWardrobe;
 
@@ -21,6 +24,11 @@ public class PlayerEvents : MonoBehaviour
     public void PlayerOpenedShop(List<int> itensToBuy)
     {
         OnPlayerOpenedShop?.Invoke(itensToBuy);
+    }
+
+    public void PlayerClosedShop()
+    {
+        OnPlayerClosedShop?.Invoke();
     }
 
     public void PlayerOpenedWardrobe()

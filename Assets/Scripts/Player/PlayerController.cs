@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,12 +22,14 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D myRB;
 
     private bool isInteracting;
+    private DialogueRunner runner;
     private PlayerEvents playerEvents;
 
     // Start is called before the first frame update
     void Start()
     {
         myRB = GetComponent<Rigidbody2D>();
+        runner = InstancesManager.singleton.GetDialogueRunnerInstance();
         playerEvents = InstancesManager.singleton.GetPlayerEventsInstance();
         playerEvents.OnPlayerSetInteraction += PlayerSetInteraction;
     }
@@ -34,12 +37,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (runner == null)
+            runner = InstancesManager.singleton.GetDialogueRunnerInstance();
+
         isPlayerMoving = false;
 
         //Initialize movement as Zero
         moveInput = new Vector2(0f, 0f);
 
-        if (!isInteracting)
+        if (!isInteracting && !runner.IsDialogueRunning)
         {
             moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 

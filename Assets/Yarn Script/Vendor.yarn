@@ -1,0 +1,26 @@
+﻿title: Vendor
+---
+Vendor: Hi There! Welcome to this strange world where there are only you and me haha!
+
+Player: Hi!
+
+-> "Who are you?"
+	Vendor: My name is Vendor and I can sell or buy outfits from people like yourself.
+	Vendor: I'll show you what I have here.
+	<<openShop Vendor>>
+
+-> Open Shop.
+	<<openShop Vendor>>
+
+-> Exit Dialogue.
+	<<jump Vendor_Exit>>
+===
+
+title: Vendor_Exit
+---
+Vendor: It was a pleasure making business with you!
+Vendor: Oh! And don't mind changing outfit on that wardrobe over there, to your right.
+
+Player: Okay. Thank you, byee!
+<<stoped_interaction Vendor>>
+===

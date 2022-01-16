@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Yarn.Unity;
 
 /*
  * Class created based on singleton project pattern.
@@ -13,12 +14,14 @@ public class InstancesManager : MonoBehaviour
 {
     public static InstancesManager singleton;
     [SerializeField] private InstantiatePlayer instantiatePlayer;
-    [SerializeField] private PlayerClothesController playerClothesController;
     [SerializeField] private StoreEvents storeEvents;
     [SerializeField] private PlayerEvents playerEvents;
     [SerializeField] private GarmentSkinsDB garmentSkins;
     [SerializeField] private PlayerGarmentDB playerGarmentDB;
     [SerializeField] private PlayerStatsDB playerStatsDB;
+    
+    private DialogueRunner dialogueRunner;
+    private PlayerClothesController playerClothesController;
     private GameObject player;
 
     void Awake()
@@ -115,5 +118,15 @@ public class InstancesManager : MonoBehaviour
             playerEvents = FindObjectOfType<PlayerEvents>();
 
         return playerEvents;
+    }
+
+    //Method reponsible for returning the DialogueRunner, from each scene, when it's requested
+    //If the DialogueRunner doesn't exist on the single, it will search for it, save and then return to the caller (this happens once per scene)
+    public DialogueRunner GetDialogueRunnerInstance()
+    {
+        if (dialogueRunner == null)
+            dialogueRunner = FindObjectOfType<DialogueRunner>();
+
+        return dialogueRunner;
     }
 }
