@@ -11,16 +11,15 @@ public class ShopManager : MonoBehaviour
     public GameObject BuyUI;
     public GameObject SellUI;
 
+    public ShopBuyController shopBuyController;
+    public ShopSellController shopSellController;
+
     private bool isBuyShopOpen;
     private PlayerStatsDB playerStatsDB;
-    private ShopBuyController shopBuyController;
-    private ShopSellController shopSellController;
 
     private void Start()
     {
         playerStatsDB = InstancesManager.singleton.GetPlayerStatsDBInstance();
-        shopBuyController = GetComponentInChildren<ShopBuyController>();
-        shopSellController = GetComponentInChildren<ShopSellController>();
 
         isBuyShopOpen = true;
         BuyUI.SetActive(isBuyShopOpen);
@@ -49,5 +48,10 @@ public class ShopManager : MonoBehaviour
         {
             shopSellController.ItemSelected(id, item);
         }
+    }
+
+    public void InstantiateBuyShop(List<int> itensToBuy)
+    {
+        shopBuyController.SetAndInstantiateItensToBuy(itensToBuy);
     }
 }

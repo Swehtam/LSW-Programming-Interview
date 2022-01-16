@@ -11,6 +11,7 @@ public class ShopBuyController : MonoBehaviour
     public Button wearButton;
     public Button buyButton;
 
+    private List<int> itensToBuyID = new List<int>();
     private List<ItemStats> itensAvaliableToBuy = new List<ItemStats>();
     private int skinSelectedID;
     private ItemStats itemStatsSelected;
@@ -35,8 +36,8 @@ public class ShopBuyController : MonoBehaviour
         skinSelectedID = -1;
         itemStatsSelected = null;
 
-        List<int> itensTest = new List<int> { 2, 3, 4, 5, 6, 7, 8, 9 };
-        InstantiateItens(itensTest);
+        if(itensToBuyID.Count > 0)
+            InstantiateItens();
     }
 
     private void Update()
@@ -46,12 +47,18 @@ public class ShopBuyController : MonoBehaviour
         buyButton.interactable = isInteractable;
     }
 
-    public void InstantiateItens(List<int> itensID)
+    public void SetAndInstantiateItensToBuy(List<int> itensID)
     {
-        for (int i = 0; i < itensID.Count; i++)
+        itensToBuyID = itensID;
+        InstantiateItens();
+    }
+
+    public void InstantiateItens()
+    {
+        for (int i = 0; i < itensToBuyID.Count; i++)
         {
             //Get garment stats from db
-            Skins skin = garmentSkinsDB.GetSkinByID(itensID[i]);
+            Skins skin = garmentSkinsDB.GetSkinByID(itensToBuyID[i]);
 
             //If the GameObjects where instantiated previously then overwrite the values
             if (i < itensAvaliableToBuy.Count)
@@ -72,9 +79,9 @@ public class ShopBuyController : MonoBehaviour
                 itensAvaliableToBuy[i].ItemBought();
         }
 
-        if (itensAvaliableToBuy.Count > itensID.Count)
+        if (itensAvaliableToBuy.Count > itensToBuyID.Count)
         {
-            for (int i = itensID.Count; i > itensAvaliableToBuy.Count; i++)
+            for (int i = itensToBuyID.Count; i > itensAvaliableToBuy.Count; i++)
             {
                 itensAvaliableToBuy[i].gameObject.SetActive(false);
             }

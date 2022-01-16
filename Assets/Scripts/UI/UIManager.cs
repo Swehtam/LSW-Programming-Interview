@@ -8,15 +8,30 @@ public class UIManager : MonoBehaviour
     public GameObject coinsUI;
     public GameObject wardrobeUI;
 
+    public  ShopManager shopManager;
+
+    private PlayerEvents playerEvents;
+
     private void Start()
     {
-        //wardrobeUI.gameObject.SetActive(false);
-        //shopUI.gameObject.SetActive(false);
+        wardrobeUI.gameObject.SetActive(false);
+        shopUI.gameObject.SetActive(false);
+
+        playerEvents = InstancesManager.singleton.GetPlayerEventsInstance();
+        playerEvents.OnPlayerOpenedShop += OpenShopUI;
+        playerEvents.OnPlayerOpenedWardrobe += OpenWardrobeUI;
     }
 
-    public void OpenShopUI()
+    private void OnDestroy()
+    {
+        playerEvents.OnPlayerOpenedShop -= OpenShopUI;
+        playerEvents.OnPlayerOpenedWardrobe -= OpenWardrobeUI;
+    }
+
+    public void OpenShopUI(List<int> itensToBuy)
     {
         shopUI.gameObject.SetActive(true);
+        shopManager.InstantiateBuyShop(itensToBuy);
         coinsUI.gameObject.SetActive(false);
     }
 
@@ -24,6 +39,8 @@ public class UIManager : MonoBehaviour
     {
         shopUI.gameObject.SetActive(false);
         coinsUI.gameObject.SetActive(true);
+
+        playerEvents.PlayerSetInteraction(false);
     }
 
     public void OpenWardrobeUI()
@@ -36,5 +53,7 @@ public class UIManager : MonoBehaviour
     {
         wardrobeUI.gameObject.SetActive(false);
         coinsUI.gameObject.SetActive(true);
+
+        playerEvents.PlayerSetInteraction(false);
     }
 }

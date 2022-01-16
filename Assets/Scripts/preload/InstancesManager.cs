@@ -15,6 +15,7 @@ public class InstancesManager : MonoBehaviour
     [SerializeField] private InstantiatePlayer instantiatePlayer;
     [SerializeField] private PlayerClothesController playerClothesController;
     [SerializeField] private StoreEvents storeEvents;
+    [SerializeField] private PlayerEvents playerEvents;
     [SerializeField] private GarmentSkinsDB garmentSkins;
     [SerializeField] private PlayerGarmentDB playerGarmentDB;
     [SerializeField] private PlayerStatsDB playerStatsDB;
@@ -104,5 +105,15 @@ public class InstancesManager : MonoBehaviour
             storeEvents = FindObjectOfType<StoreEvents>();
 
         return storeEvents;
+    }
+
+    //Method reponsible for returning the PlayerEvents, from _preload scene, when it's requested
+    //If the PlayerEvents doesn't exist on the single, it will search for it, save and then return to the caller (this happens once per game)
+    public PlayerEvents GetPlayerEventsInstance()
+    {
+        if (playerEvents == null)
+            playerEvents = FindObjectOfType<PlayerEvents>();
+
+        return playerEvents;
     }
 }

@@ -20,29 +20,36 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D myRB;
 
+    private bool isInteracting;
+    private PlayerEvents playerEvents;
+
     // Start is called before the first frame update
     void Start()
     {
         myRB = GetComponent<Rigidbody2D>();
+        playerEvents = InstancesManager.singleton.GetPlayerEventsInstance();
+        playerEvents.OnPlayerSetInteraction += PlayerSetInteraction;
     }
 
     // Update is called once per frame
     void Update()
     {
-
         isPlayerMoving = false;
 
         //Initialize movement as Zero
         moveInput = new Vector2(0f, 0f);
 
-        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-        moveInput *= moveSpeed;
-
-        if (moveInput.x != 0 || moveInput.y != 0)
+        if (!isInteracting)
         {
-            isPlayerMoving = true;
-            lastMoveX = moveInput.x;
+            moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+            moveInput *= moveSpeed;
+
+            if (moveInput.x != 0 || moveInput.y != 0)
+            {
+                isPlayerMoving = true;
+                lastMoveX = moveInput.x;
+            }
         }
 
         anim.SetFloat("MoveX", moveInput.x);
@@ -56,24 +63,13 @@ public class PlayerController : MonoBehaviour
         myRB.velocity = moveInput;
     }
 
-    //********** CRIAR OUTRO SCRIPT PARA ISSO **********
-    public void SetLookSide(float value)
-    {
-        lastMoveX = value;
-        moveInput.x = value;
-        anim.SetFloat("LastMoveX", lastMoveX);
-        anim.SetFloat("MoveX", moveInput.x);
-    }
-
-    public void SetWalkingValue(bool value)
-    {
-        isPlayerMoving = value;
-
-        anim.SetBool("IsMoving", isPlayerMoving);
-    }
-
     public bool IsWalking()
     {
         return isPlayerMoving;
+    }
+
+    private void PlayerSetInteraction(bool value)
+    {
+        isInteracting = value;
     }
 }
